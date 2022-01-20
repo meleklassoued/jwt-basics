@@ -1,4 +1,11 @@
+const CustomAPIError = require("../errors/custom-error");
+
 const login = async (req, res) => {
+  const { username, password } = req.body;
+  console.log(username, password);
+  if (!username || !password) {
+    throw new CustomAPIError("Please provide email password ", 400);
+  }
   res.send("fake Login/Register/Signup Route");
 };
 
