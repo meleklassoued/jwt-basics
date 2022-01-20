@@ -46,7 +46,7 @@ btnDOM.addEventListener('click', async () => {
   try {
     const { data } = await axios.get('/api/v1/dashboard', {
       headers: {
-        Authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     })
     resultDOM.innerHTML = `<h5>${data.msg}</h5><p>${data.secret}</p>`
